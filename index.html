@@ -1,4 +1,81 @@
 <!DOCTYPE html>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+ 
+/* ── ROOT VARIABLES ── */
+:root {
+  --fk-black:  #080808;
+  --fk-dark:   #0f0f0f;
+  --fk-card:   #141414;
+  --fk-card2:  #191919;
+  --fk-border: #252525;
+  --fk-gold:   #F5C518;
+  --fk-white:  #ede9df;
+  --fk-muted:  #6b6b6b;
+  --fk-muted2: #9a9a9a;
+  --fk-head:   'Syne', sans-serif;
+  --fk-body:   'DM Sans', sans-serif;
+}
+ 
+/* ── GLOBAL RESET (scoped ke .fk-page) ── */
+.fk-page *, .fk-page *::before, .fk-page *::after {
+  box-sizing: border-box;
+}
+.fk-page {
+  font-family: var(--fk-body);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--fk-white);
+  background: var(--fk-black);
+  overflow-x: hidden;
+}
+ 
+/* ── SHARED UTILITIES ── */
+.fk-section-tag {
+  font-size: 10px; font-weight: 600; letter-spacing: 3px;
+  color: var(--fk-gold); text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex; align-items: center; gap: 10px;
+}
+.fk-section-tag::before {
+  content: ''; display: block;
+  width: 16px; height: 1px; background: var(--fk-gold);
+}
+.fk-section-h {
+  font-family: var(--fk-head);
+  font-size: clamp(26px, 3.5vw, 44px);
+  font-weight: 800; line-height: 1.05;
+  letter-spacing: -1.5px; margin-bottom: 16px;
+}
+.fk-btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 28px;
+  background: var(--fk-gold); color: #000;
+  border-radius: 100px;
+  font-family: var(--fk-head); font-size: 14px; font-weight: 700;
+  text-decoration: none; transition: all .25s;
+}
+.fk-btn-primary:hover {
+  background: #ffd63a; transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(245,197,24,0.25);
+}
+.fk-btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 28px; background: transparent;
+  border: 1px solid var(--fk-border); border-radius: 100px;
+  color: var(--fk-white); text-decoration: none;
+  font-family: var(--fk-head); font-size: 14px; font-weight: 600;
+  transition: all .25s;
+}
+.fk-btn-outline:hover { border-color: var(--fk-gold); color: var(--fk-gold); }
+ 
+/* Reveal animation */
+.fk-reveal {
+  opacity: 0; transform: translateY(22px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+.fk-reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
 <html lang="en-US">
 <head>
 <meta charset="UTF-8">
